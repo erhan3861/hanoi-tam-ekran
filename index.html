@@ -429,6 +429,7 @@ function checkWin() {
       lastCompletePeg = i;
       setTimeout(function() {
         pwdEl.textContent = FIXED_PASSWORD;
+        window.parent.postMessage({ type: "ctf:flag-revealed" }, "*");
         modal.classList.add('active');
       }, 500);
       return;
